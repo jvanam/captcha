@@ -1,0 +1,25 @@
+{
+  "name": "captcha",
+  "version": "1.0.0",
+  "description": "CAPTCHA web app game",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jvanam/captcha.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jvanam/captcha/issues"
+  },
+  "homepage": "https://github.com/jvanam/captcha#readme",
+  "dependencies": {
+    "atom-cli": "0.0.6",
+    "parcel": "^1.12.4"
+  },
+  "devDependencies": {}
+}
