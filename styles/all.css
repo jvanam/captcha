@@ -125,7 +125,12 @@ button {
   grid-template-columns: 126px 126px 126px;
   grid-gap: 4px;
 }
-.q-img {background-color: blue;}
+.q-img {
+  background-color: blue;
+  background-image: url(../media/refresh.png);
+  background-size: 126px;
+  background-repeat: no-repeat;
+}
 #q-row3{
   grid-row: 3;
   border-top: 1px solid #dfdfdf;
