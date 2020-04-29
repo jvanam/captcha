@@ -8,17 +8,43 @@
   <body>
     <h1> welcome to the captcha game!</h1>
 
-    <div id="grid-container">
-      <div id="col1">
-        <button id="col1-item" type="button"></button>
+    <div id="b-grid-container">
+      <div id="b-col1">
+        <button id="b-col1-item" type="button"></button>
       </div>
-      <div id="col2">
-        <p id="col2-item">I'm not a robot</p>
+      <div id="b-col2">
+        <p id="b-col2-item">I'm not a robot</p>
       </div>
-      <div id="col3">
-        <div id="col3-logo"></div>
-        <p class="col3-item" id="col3-txt">deCAPTCHA</p>
-        <a class="col3-item" id='col3-link'>Privacy - Terms</a>
+      <div id="b-col3">
+        <div id="b-col3-logo"></div>
+        <p class="b-col3-item" id="b-col3-txt">deCAPTCHA</p>
+        <a class="b-col3-item" id='b-col3-link'>Privacy - Terms</a>
+      </div>
+    </div>
+
+    <div id="q-grid-container">
+      <div id="q-row1">
+        <p class="q-toptext1">Select all <span slot="q-type1">squares that contain</span>
+          <span slot="q-type2">images with</span></p>
+        <p class="q-toptext2" slot="q-identifier"></p>
+        <p class="q-toptext1" slot="q-type3"> Click verify once there are none left.</p>
+      </div>
+      <div id="q-row2">
+        <div class="q-img" id="q1"></div>
+        <div class="q-img" id="q2"></div>
+        <div class="q-img" id="q3"></div>
+        <div class="q-img" id="q4"></div>
+        <div class="q-img" id="q5"></div>
+        <div class="q-img" id="q6"></div>
+        <div class="q-img" id="q7"></div>
+        <div class="q-img" id="q8"></div>
+        <div class="q-img" id="q9"></div>
+      </div>
+      <div id="q-row3">
+        <div class="row3icon" id="refresh"></div>
+        <div class="row3icon" id="audio"></div>
+        <div class="row3icon" id="info"></div>
+        <button id="q-row3-button" type="button">VERIFY</button>
       </div>
     </div>
 
@@ -57,6 +83,6 @@
         });
       }
     </script>
-
+    <script src="scripts/quiz.js"></script>
   </body>
 </html>
