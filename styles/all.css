@@ -10,6 +10,7 @@ button {
   -webkit-appearance: none;
   -moz-appearance: none;
   padding: 0px;
+  cursor: pointer;
 }
 #b-grid-container {
   position: absolute;
@@ -144,6 +145,27 @@ button {
   background-image: url(../media/refresh.png);
   display:inline-block;
 }
-#q-row3-button{
+#refresh{
+
+}
+#audio{
+
+}
+#info{
+
+}
+#verify-button{
   float: right;
+  background-color: #4a90e2;
+  border: 0px;
+  border-radius: 2px;
+  font-family: sans-serif;
+  height: 42px;
+  line-height: 42px;
+  font-size: 14px;
+  color: #fff;
+  min-width: 100px;
+  text-align: center;
+  padding: 0 10px 0 10px;
+  cursor: pointer;
 }
