@@ -137,26 +137,39 @@ button {
   border-top: 1px solid #dfdfdf;
   height: 60px;
   width: auto;
-  display: block;
+  display: table;
+  vertical-align: middle;
 }
 .row3icon {
   height: 48px;
   width: 48px;
-  background-image: url(../media/refresh.png);
-  display:inline-block;
+  line-height: 60px;
+  background-size: 32px 32px;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.55;
+  display: table-cell;
+  vertical-align: middle;
+  float: left;
+  cursor: pointer;
+}
+.row3icon :hover {
+  opacity: 1;
 }
 #refresh{
-
+  background-image: url(../media/refresh.png);
 }
 #audio{
-
+  background-image: url(../media/audio.png);
 }
 #info{
-
+  background-image: url(../media/info.png);
 }
 #verify-button{
   float: right;
   background-color: #4a90e2;
+  display: table-cell;
+  vertical-align: middle;
   border: 0px;
   border-radius: 2px;
   font-family: sans-serif;

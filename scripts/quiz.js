@@ -1,8 +1,5 @@
 // TODO:
 // add var questionid = '' upon init
-// add logic for rendering the three question types
-
-// dont worry about changing photos for type 3 yet
 // add click ventlistener to verify BUTTON
 // onclick it will:
 // find the imgkey associated w each clicked button and add one to its value
@@ -19,8 +16,8 @@ var squaresDict = {"img01":false,"img02":false,"img03":false,"img04":false,
 var database = firebase.database();
 //set the level and question vars
 var lvl = "lvl1"
-var qst = "q2"
-var imgref = lvl + "/img/" + qst
+var qst = 1
+
 // toggle the quiz module
 initBtn.onclick = () => {
   if (quizFrame.style.display === "grid") {
@@ -31,27 +28,28 @@ initBtn.onclick = () => {
 };
 
 // populate the squares with background images from database
-var images = firebase.database().ref(imgref).once('value')
-  .then((snapshot) => {
-    var snap = snapshot.val();
-    qImg.forEach((el) => {
-      imgLink = snap[el.id];
-      var thisisit = el.id;
-      // prefetch images
-      const im = new Image();
-      im.src = imgLink;
-      // set background
-      el.style.backgroundImage = "url(" + imgLink + ")"
-      //add to squaresDict
-      console.log(thisisit);
-      console.log(squaresDict[thisisit]);
+function populateSquares() {
+  var imgref = lvl + "/img/q" + qst.toString()
+  var images = firebase.database().ref(imgref).once('value')
+    .then((snapshot) => {
+      var snap = snapshot.val();
+      qImg.forEach((el) => {
+        imgLink = snap[el.id];
+        var thisisit = el.id;
+        // prefetch images
+        const im = new Image();
+        im.src = imgLink;
+        // set background
+        el.style.backgroundImage = "url(" + imgLink + ")"
+        //add to squaresDict
+      });
+    })
+    .catch({
+      // failed
     });
-    console.log("hello");
-  })
-  .catch({
-    // failed
-  });
+}
 
+populateSquares();
 
 
 // add event listeners to quiz squares
@@ -68,3 +66,9 @@ var images = firebase.database().ref(imgref).once('value')
      }
    });
  });
+
+// verify BUTTON
+verBtn.addEventListener("click", function(){
+  qst += 1;
+  populateSquares();
+})
