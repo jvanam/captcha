@@ -6,8 +6,9 @@
     <link rel="stylesheet" href="styles/all.css">
   </head>
   <body>
-    <h1> welcome to the captcha game!</h1>
-
+    <div id="header">
+      <h1>How human are you?</h1>
+    </div>
     <div id="b-grid-container">
       <div id="b-col1">
         <button id="b-col1-item" type="button"></button>
@@ -47,9 +48,6 @@
       </div>
     </div>
 
-    <button onclick="writeUserData()">Click me to write user data!</button>
-    <button><a href="results.html">results page</a></button>
-
     <!-- FIREBASE TODO: create a separate file for this -->
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
@@ -74,13 +72,6 @@
       firebase.analytics();
       // Get a reference to the database service
       var database = firebase.database();
-      //trying to write data! function
-      function writeUserData() {
-        firebase.database().ref('jv345').set({
-          username: 'Jess',
-          age : 22
-        });
-      }
     </script>
     <script src="scripts/quiz.js"></script>
   </body>

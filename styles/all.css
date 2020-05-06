@@ -1,4 +1,15 @@
-h1 {font-style: italic;}
+h1 {
+  font-family: "GTSectra";
+  color: red;
+  font-size: 30pt;
+}
+#header {
+  width: 100%;
+  text-align: center;
+  border-bottom: solid;
+  border-color: red;
+  border-width: thin;
+}
 p {
   margin: 0px;
 }
@@ -139,6 +150,7 @@ button {
   width: auto;
   display: table;
   vertical-align: middle;
+  padding: 6px;
 }
 .row3icon {
   height: 48px;
@@ -149,7 +161,6 @@ button {
   background-position: center;
   opacity: 0.55;
   display: table-cell;
-  vertical-align: middle;
   float: left;
   cursor: pointer;
 }
@@ -175,10 +186,16 @@ button {
   font-family: sans-serif;
   height: 42px;
   line-height: 42px;
+  margin-top: 2px;
+  margin-right: 2px;
   font-size: 14px;
   color: #fff;
   min-width: 100px;
   text-align: center;
   padding: 0 10px 0 10px;
   cursor: pointer;
+}
+@font-face {
+  font-family: 'GTSectra';
+  src: url('../fonts/GT-Sectra-Book-Italic.otf');
 }
