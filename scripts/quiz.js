@@ -97,14 +97,17 @@ verBtn.addEventListener("click", function(){
 })
 
 // DANGER ZONE! RESET ALL SCORES TO ZERO //
-// function resetScores() {
-//   var lvl1Len = lvl1Img;
-//   var lvl2Len = lvl2Img;
-//   console.log(lvl1Len);
-//   console.log(lvl2Len);
-//   var updates = {};
-//   for(x=1; x<10; x++){
-//     updates["lvl1/scores/q1/img0" + x.toString()] = 0;
-//   }
-//   return firebase.database().ref().update(updates);
-// };
+function resetScores() {
+  var updates = {};
+  for(y=1; y<=8; y++){
+    for(x=1; x<=9; x++){
+      updates["lvl1/scores/q"+y.toString()+"/img0"+x.toString()] = 0;
+    }
+  }
+  for(y=1; y<=4; y++){
+    for(x=1; x<=9; x++){
+      updates["lvl2/scores/q"+y.toString()+"/img0"+x.toString()] = 0;
+    }
+  }
+  return firebase.database().ref().update(updates);
+};
