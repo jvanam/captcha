@@ -148,8 +148,6 @@ button {
   grid-gap: 4px;
 }
 .q-img {
-  background-color: blue;
-  background-image: url(../media/refresh.png);
   background-size: 126px;
   background-repeat: no-repeat;
 }
