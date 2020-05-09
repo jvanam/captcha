@@ -128,6 +128,16 @@ button {
   font-size: 14px;
   grid-row: 1;
 }
+#q-type1{
+  display: none;
+}
+#q-type2{
+  display: none;
+}
+#q-identifier {
+  font-size: 22pt;
+  font-weight: bold;
+}
 #q-row2{
   text-align: center;
   padding: 0 7px;
