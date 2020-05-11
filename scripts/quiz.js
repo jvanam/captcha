@@ -1,14 +1,7 @@
 // Get a reference to the database service
 var database = firebase.database();
-// CSS selectors
-var initBtn = document.querySelector("#b-col1-item");
-var quizFrame = document.querySelector("#q-grid-container");
-var qImg = document.querySelectorAll(".q-img");
-var verBtn = document.querySelector("#verify-button");
-var identifier = document.querySelector("#q-identifier");
-var qType1 = document.querySelector("#q-type1");
-var qType2 = document.querySelector("#q-type2");
-// retrieve lvl 1 + 2 img
+
+// retrieve image links and save as lvl1Img and lvl2Img
 var lvl1Img;
 var lvl2Img;
 var initLvl1Img = firebase.database().ref("lvl1/img").once('value')
@@ -26,21 +19,56 @@ var initLvl2Img = firebase.database().ref("lvl2/img").once('value')
   .catch({
     // failed
   });
+
+// set total number of lvl1 and lvl2 questions to be chosen from
+var lvl1qtotal = [1,2,3,4,5,6,7,8];
+var lvl2qtotal = [1,2,3,4];
+// create array of questions in this game
+var lvl1qs = [];
+var lvl2qs = [];
+//set length of each level
+var lvl1length = 5;
+var lvl2length = 4;
+
 // set the level and question vars
-var lvl = 1;
-var qst = 1;
+function setLineup(){
+  // lvl1
+  while (lvl1qs.length < lvl1length){
+    num = Math.floor(Math.random()*lvl1qtotal.length);
+    lvl1qs.push(lvl1qtotal[num]);
+    lvl1qtotal.splice(num,1);
+  }
+  // lvl2
+  while (lvl2qs.length < lvl2length){
+    num = Math.floor(Math.random()*lvl2qtotal.length);
+    lvl2qs.push(lvl2qtotal[num]);
+    lvl2qtotal.splice(num,1);
+  }
+}
+
+//initialize lineup and set the lvl1 / first question
+setLineup();
+var lvl = lvl1qs;
+var qstInd = 0;
+console.log("lineup set!");
 
 // populate the squares with background images from database
+var qImg = document.querySelectorAll(".q-img");
+var identifier = document.querySelector("#q-identifier");
+var qType1 = document.querySelector("#q-type1");
+var qType2 = document.querySelector("#q-type2");
 function populateSquares() {
   var qstLink;
-  var question = "q" + qst.toString();
-  if (lvl===1){
+  var question = "q" + lvl[qstInd].toString();
+  if (lvl===lvl1qs){
     qstLink = lvl1Img[question];
   }
-  else if (lvl===2){ qstLink = lvl2Img[question]; }
+  else if (lvl===lvl2qs){ qstLink = lvl2Img[question]; }
   qImg.forEach((el) => {
     // set background
     el.style.backgroundImage = "url(" + qstLink[el.id] + ")";
+    el.style.webkitTransform = "rotate(0deg)";
+    el.style.mozTransform = "rotate(0deg)";
   });
   // set textContent
   identifier.textContent = qstLink["identifier"];
@@ -55,6 +83,8 @@ function populateSquares() {
 }
 
 // toggle the quiz module
+var initBtn = document.querySelector("#b-col1-item");
+var quizFrame = document.querySelector("#q-grid-container");
 initBtn.onclick = () => {
   if (quizFrame.style.display === "grid") {
     quizFrame.style.display = "none";
@@ -78,7 +108,17 @@ initBtn.onclick = () => {
    });
  });
 
+// refresh button
+var refBtn = document.querySelector("#refresh");
+refBtn.addEventListener("click", function(){
+  qImg.forEach((el) => {
+     el.style.webkitTransform = "rotate(90deg)";
+     el.style.mozTransform = "rotate(90deg)";
+   });
+})
+
 // verify button
+var verBtn = document.querySelector("#verify-button");
 verBtn.addEventListener("click", function(){
   qImg.forEach((el) => {
     if (el.style.margin === "12px") {
@@ -86,13 +126,35 @@ verBtn.addEventListener("click", function(){
       el.style.backgroundSize="126px";
       key = el.id
       // Increment the img score by 1.
-      var postRef = firebase.database().ref(lvl+'/scores/q'+qst.toString()+"/"+key);
+      var level;
+      if(lvl===lvl1qs){
+        level = "lvl1";
+        question = lvl1qs[qstInd];
+      }
+      else{
+        level = "lvl2";
+        question = lvl2qs[qstInd];
+      }
+      var postRef = firebase.database().ref(level+'/scores/q'+question.toString()+"/"+key);
       postRef.transaction(function(updateScore) {
         return updateScore + 1;
       });
     }
   });
-  qst += 1;
+  if(lvl===lvl1qs){
+    if(qstInd<lvl1length-1){
+      qstInd += 1;
+    } else if(qstInd===lvl1length-1){
+      lvl = lvl2qs;
+      qstInd = 0;
+    }
+  } else if(lvl===lvl2qs){
+    if(qstInd<lvl2length-1){
+      qstInd += 1;
+    } else if(qstInd===lvl2length-1){
+      window.open('results.html', '_self');
+    }
+  }
   populateSquares();
 })
 
