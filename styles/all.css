@@ -56,6 +56,7 @@ button {
   margin:0 12px 2px 12px;
   padding: none;
   outline: none;
+  transition: border 200ms;
 }
 #b-col1 :active {
   background-color: #ebebeb;
@@ -152,6 +153,8 @@ button {
   z-index: 10;
   display: none;
   background-color: #fff;
+  opacity: 1;
+  transition: opacity 1s;
 }
 #q-row1{
   background-color: #4a90e2;
