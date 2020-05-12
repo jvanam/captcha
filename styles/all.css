@@ -47,7 +47,8 @@ button {
   z-index: 0;
 }
 #b-col1-item {
-  border: 2px solid #c1c1c1;
+  border: 2px solid;
+  border-color: #c1c1c1;
   background-color: #ffffff;
   border-radius: 2px;
   height: 28px;
@@ -102,6 +103,39 @@ button {
   color: #555555;
 }
 /*  QUIZ */
+.q-triangle{
+  position: absolute;
+  margin: auto;
+  width: 0;
+  height: 0;
+  display: none;
+}
+#inner {
+  /* border-top: 11px solid transparent;
+  border-right: 11px solid white;
+  border-bottom: 11px solid transparent; */
+  top: 0px;
+  bottom: 0px;
+  left: -420px;
+  right: 0px;
+  border-style: solid;
+  border-width: 10px;
+  border-color: transparent rgb(255, 255, 255) transparent transparent;
+  z-index: 20;
+}
+#outer{
+  border-color: transparent rgb(204, 204, 204) transparent transparent;
+  border-width: 11px;
+  border-style: solid;
+  top: 0px;
+  bottom: 0px;
+  left: -422px;
+  right: 0px;
+  /* border-top: 10px solid rgb(204,204,204);
+  border-right: 10px solid white;
+  border-bottom: 10px solid rgb(204,204,204); */
+  z-index: 20;
+}
 #q-grid-container{
   width: 400px;
   height: 580px;

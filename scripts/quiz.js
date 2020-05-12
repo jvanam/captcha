@@ -87,25 +87,41 @@ function populateSquares() {
   }
 }
 
-// document.addEventListener("click", function(){
-//   el= event.target;
-//   console.log(el);
-//   //if(event.target.hasClass('#q-grid-container')){console.log("has class")}
-//   if(el.classList.contains("q")){console.log("part of quiz");}
-// })
 // toggle the quiz module
 var initBtn = document.querySelector("#b-col1-item");
 var quizFrame = document.querySelector("#q-grid-container");
+var qTri = document.querySelectorAll(".q-triangle");
 initBtn.onclick = () => {
   if (quizFrame.style.display === "grid") {
     quizFrame.style.display = "none";
+    qTri.forEach((el) => {
+      el.style.display = "none";
+    });
+    initBtn.style.borderColor="#4d90fe";
   } else {
     populateSquares();
     quizFrame.style.display = "grid";
+    qTri.forEach((el) => {
+      el.style.display = "block";
+    });
+    initBtn.style.borderColor="#c1c1c1";
   }
 };
 
-//event listener function for closing quiz window
+//event listener for closing quiz window
+document.addEventListener("click", function(){
+  el= event.target;
+  // if(el.classList.contains("q")){console.log("part of quiz");}
+  if(el.classList.contains("q")===false && el!==initBtn){
+    if (quizFrame.style.display === "grid") {
+      quizFrame.style.display = "none";
+      qTri.forEach((el) => {
+        el.style.display = "none";
+      });
+      initBtn.style.borderColor="#4d90fe"
+    }
+  }
+})
 
 // add event listeners to quiz squares
  qImg.forEach((el) => {
