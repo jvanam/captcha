@@ -48,6 +48,7 @@ button {
 }
 #b-col1-item {
   border: 2px solid #c1c1c1;
+  background-color: #ffffff;
   border-radius: 2px;
   height: 28px;
   width: 28px;
@@ -155,10 +156,11 @@ button {
   grid-row: 3;
   border-top: 1px solid #dfdfdf;
   height: 60px;
-  width: auto;
+  width: 98.5%;
   display: table;
   vertical-align: middle;
-  padding: 6px;
+  padding-right: 1.5%;
+  padding-top: 1.5%;
 }
 .row3icon {
   height: 48px;
