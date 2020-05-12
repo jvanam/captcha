@@ -57,6 +57,7 @@ var qImg = document.querySelectorAll(".q-img");
 var identifier = document.querySelector("#q-identifier");
 var qType1 = document.querySelector("#q-type1");
 var qType2 = document.querySelector("#q-type2");
+// var quizGroup =
 function populateSquares() {
   var qstLink;
   var question = "q" + lvl[qstInd].toString();
@@ -67,8 +68,12 @@ function populateSquares() {
   qImg.forEach((el) => {
     // set background
     el.style.backgroundImage = "url(" + qstLink[el.id] + ")";
+    //reset refresh button settings
     el.style.webkitTransform = "rotate(0deg)";
     el.style.mozTransform = "rotate(0deg)";
+    feedbackMsg.style.display = "none";
+    gridContainer.style.height="580px";
+
   });
   // set textContent
   identifier.textContent = qstLink["identifier"];
@@ -82,6 +87,12 @@ function populateSquares() {
   }
 }
 
+// document.addEventListener("click", function(){
+//   el= event.target;
+//   console.log(el);
+//   //if(event.target.hasClass('#q-grid-container')){console.log("has class")}
+//   if(el.classList.contains("q")){console.log("part of quiz");}
+// })
 // toggle the quiz module
 var initBtn = document.querySelector("#b-col1-item");
 var quizFrame = document.querySelector("#q-grid-container");
@@ -93,6 +104,8 @@ initBtn.onclick = () => {
     quizFrame.style.display = "grid";
   }
 };
+
+//event listener function for closing quiz window
 
 // add event listeners to quiz squares
  qImg.forEach((el) => {
@@ -110,11 +123,22 @@ initBtn.onclick = () => {
 
 // refresh button
 var refBtn = document.querySelector("#refresh");
+var feedbackMsg = document.querySelector("#feedback-msg");
+var gridContainer = document.querySelector("#q-grid-container");
 refBtn.addEventListener("click", function(){
   qImg.forEach((el) => {
-     el.style.webkitTransform = "rotate(90deg)";
-     el.style.mozTransform = "rotate(90deg)";
+    if(el.style.webkitTransform==="rotate(0deg)"){
+      el.style.webkitTransform = "rotate(90deg)";
+      el.style.mozTransform = "rotate(90deg)";
+    } else if (el.style.webkitTransform = "rotate(90deg)"){
+      el.style.webkitTransform = "rotate(180deg)";
+      el.style.mozTransform = "rotate(180deg)";
+      feedbackMsg.style.display = "inline";
+      feedbackMsg.textContent="Does this help?";
+      gridContainer.style.height="610px";
+    }
    });
+   // feedbackmessage.style.display = inline
 })
 
 // verify button
@@ -141,6 +165,7 @@ verBtn.addEventListener("click", function(){
       });
     }
   });
+  //load next question or go to reuslts page
   if(lvl===lvl1qs){
     if(qstInd<lvl1length-1){
       qstInd += 1;
