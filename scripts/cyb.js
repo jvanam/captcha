@@ -1,4 +1,4 @@
-import { default as anime } from '/scripts/anime.js';
+const anime = require('/scripts/anime.js');
 
 const mouthToPleased = () => {
   anime({
