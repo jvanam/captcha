@@ -2,6 +2,14 @@ h1 {
   font-family: "GTSectra";
   color: red;
   font-size: 30pt;
+  cursor: none;
+}
+.h1hov:hover{
+  font-family: "GTSectraItalic";
+  color: red;
+}
+#cyb{
+  font-family: "GTSectraItalic";
 }
 #header {
   width: 100%;
@@ -253,6 +261,10 @@ button {
   cursor: pointer;
 }
 @font-face {
-  font-family: 'GTSectra';
+  font-family: 'GTSectraItalic';
   src: url('../fonts/GT-Sectra-Book-Italic.otf');
+}
+@font-face {
+  font-family: 'GTSectra';
+  src: url('../fonts/GT-Sectra-Book.otf');
 }
