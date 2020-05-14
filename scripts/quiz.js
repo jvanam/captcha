@@ -1,7 +1,20 @@
 const cybModule = require('/scripts/cyb.js');
+var emotiveState = "neutral";
 
 var cyb = document.querySelector("#cyb");
-cyb.addEventListener("click", function(){cybModule.mouthToPleased()});
+cyb.addEventListener("click", function(){
+  console.log(emotiveState);
+  if (emotiveState==="pleased"){
+    cybModule.cybToUpset()
+    emotiveState = "upset";
+  } else if (emotiveState==="upset") {
+    cybModule.cybToNeutral()
+    emotiveState = "neutral";
+  }else if (emotiveState==="neutral") {
+    cybModule.cybToPleased()
+    emotiveState = "pleased";
+  }
+});
 
 
 // Get a reference to the database service
