@@ -1,23 +1,31 @@
 const anime = require('/scripts/anime.js');
 
+//effects on load
+const pulse = () => {
+  anime({
+  targets: '#shadow',
+  height: '335px',
+  easing: 'cubicBezier(.5, .05, .1, .3)',
+  direction: "alternate",
+  loop: true,
+  duration: 2000,
+  });
+}
 // main emotive changes
 const cybToPleased = () => {
   mouthToPleased();
   eyesToPleased();
   shadowToYellow();
-  emotiveState = "pleased";
 }
 const cybToNeutral = () => {
   mouthToNeutral();
   eyesToNeutral();
   shadowToBlue();
-  emotiveState = "neutral";
 }
 const cybToUpset = () => {
   mouthToUpset();
   eyesToUpset();
   shadowToPink();
-  emotiveState = "upset";
 }
 
 //individual feature changes
@@ -144,6 +152,7 @@ const shadowToPink = () => {
 
 
 //exports
+exports.pulse = pulse;
 exports.cybToPleased = cybToPleased;
 exports.cybToNeutral = cybToNeutral;
 exports.cybToUpset = cybToUpset;

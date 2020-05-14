@@ -1,20 +1,12 @@
 h1 {
-  font-family: "GTSectra";
-  color: red;
+  font-family: "GTSectraITalic";
+  color: black;
   font-size: 30pt;
-}
-.h1hov:hover{
-  font-family: "GTSectraItalic";
-  color: red;
-}
-#cyb{
-  font-family: "GTSectraItalic";
 }
 #header {
   width: 100%;
   text-align: center;
-  border-bottom: solid;
-  border-color: red;
+
   border-width: thin;
   position: absolute;
   top: 0;
@@ -33,6 +25,10 @@ a {
   position: relative;
   bottom: 0;
   margin: auto;
+  transition: 4s;
+}
+.hidden{
+  opacity: 0;
 }
 #cyb{
   display: block;

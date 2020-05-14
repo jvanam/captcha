@@ -1,21 +1,28 @@
-const cybModule = require('/scripts/cyb.js');
+const cyb = require('/scripts/cyb.js');
 var emotiveState = "neutral";
+var face = document.querySelector("#face");
+var shadow = document.querySelector("#shadow");
+var cybCont = document.querySelector("#cyb-container");
+// onload animations
+cyb.pulse();
+window.addEventListener("load", function(){
+  cybCont.classList.remove("hidden");
+});
 
-var cyb = document.querySelector("#cyb");
-cyb.addEventListener("click", function(){
+//toggle Cyb's emotive states on click
+face.addEventListener("click", function(){
   console.log(emotiveState);
   if (emotiveState==="pleased"){
-    cybModule.cybToUpset()
+    cyb.cybToUpset()
     emotiveState = "upset";
   } else if (emotiveState==="upset") {
-    cybModule.cybToNeutral()
+    cyb.cybToNeutral()
     emotiveState = "neutral";
   }else if (emotiveState==="neutral") {
-    cybModule.cybToPleased()
+    cyb.cybToPleased()
     emotiveState = "pleased";
   }
 });
-
 
 // Get a reference to the database service
 var database = firebase.database();
