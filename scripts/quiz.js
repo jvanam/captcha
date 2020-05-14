@@ -1,5 +1,4 @@
-
-import * as cybModule from "/scripts/cyb.js";
+const cybModule = require('/scripts/cyb.js');
 
 var cyb = document.querySelector("#cyb");
 cyb.addEventListener("click", function(){cybModule.mouthToPleased()});

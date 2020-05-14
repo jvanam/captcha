@@ -12,4 +12,4 @@ const mouthToPleased = () => {
   });
 }
 
-export { mouthToPleased };
+exports.mouthToPleased = mouthToPleased;
