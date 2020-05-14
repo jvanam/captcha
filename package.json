@@ -20,7 +20,8 @@
   "homepage": "https://github.com/jvanam/captcha#readme",
   "dependencies": {
     "atom-cli": "0.0.6",
-    "parcel": "^1.12.4"
+    "parcel": "^1.12.4",
+    "scripts": "^0.1.0"
   },
   "devDependencies": {}
 }

@@ -1,3 +1,10 @@
+
+import * as cybModule from "/scripts/cyb.js";
+
+var cyb = document.querySelector("#cyb");
+cyb.addEventListener("click", function(){cybModule.mouthToPleased()});
+
+
 // Get a reference to the database service
 var database = firebase.database();
 
@@ -34,13 +41,13 @@ var lvl2length = 4;
 function setLineup(){
   // lvl1
   while (lvl1qs.length < lvl1length){
-    num = Math.floor(Math.random()*lvl1qtotal.length);
+    var num = Math.floor(Math.random()*lvl1qtotal.length);
     lvl1qs.push(lvl1qtotal[num]);
     lvl1qtotal.splice(num,1);
   }
   // lvl2
   while (lvl2qs.length < lvl2length){
-    num = Math.floor(Math.random()*lvl2qtotal.length);
+    var num = Math.floor(Math.random()*lvl2qtotal.length);
     lvl2qs.push(lvl2qtotal[num]);
     lvl2qtotal.splice(num,1);
   }
@@ -110,7 +117,7 @@ initBtn.onclick = () => {
 
 //event listener for closing quiz window
 document.addEventListener("click", function(){
-  el= event.target;
+  var el= event.target;
   // if(el.classList.contains("q")){console.log("part of quiz");}
   if(el.classList.contains("q")===false && el!==initBtn){
     if (quizFrame.style.display === "grid") {
