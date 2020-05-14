@@ -2,7 +2,6 @@ h1 {
   font-family: "GTSectra";
   color: red;
   font-size: 30pt;
-  cursor: none;
 }
 .h1hov:hover{
   font-family: "GTSectraItalic";
@@ -17,6 +16,8 @@ h1 {
   border-bottom: solid;
   border-color: red;
   border-width: thin;
+  position: absolute;
+  top: 0;
 }
 p {
   margin: 0px;
@@ -24,7 +25,40 @@ p {
 a {
   margin: 0px;
 }
-/*  BUTTON */
+                                /*  CYB */
+#cyb-container{
+  display: block;
+  height: 95vh;
+  width: 300px;
+  position: relative;
+  bottom: 0;
+  margin: auto;
+}
+#cyb{
+  display: block;
+  z-index: 20;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+#shadow{
+  display: block;
+  z-index: -10;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+#shadowpath{
+  fill: green;
+}
+
+                                /*  BUTTON */
 button {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -32,13 +66,14 @@ button {
   cursor: pointer;
 }
 #b-grid-container {
+  display: none;
   position: absolute;
   top: 0px;
   left: -200px;
   right: 0px;
   bottom: 0px;
   margin: auto;
-  display: grid;
+  /* display: grid; */
   height: 74px;
   width: 300px;
   background-color: #f9f9f9;
@@ -111,7 +146,7 @@ button {
   text-decoration: none;
   color: #555555;
 }
-/*  QUIZ */
+                                /*  QUIZ */
 .q-triangle{
   position: absolute;
   margin: auto;
@@ -260,6 +295,7 @@ button {
   padding: 0 10px 0 10px;
   cursor: pointer;
 }
+                                /*  FONTS */
 @font-face {
   font-family: 'GTSectraItalic';
   src: url('../fonts/GT-Sectra-Book-Italic.otf');
