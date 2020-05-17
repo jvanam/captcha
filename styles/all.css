@@ -6,7 +6,6 @@ h1 {
 #header {
   width: 100%;
   text-align: center;
-
   border-width: thin;
   position: absolute;
   top: 0;
@@ -17,28 +16,72 @@ p {
 a {
   margin: 0px;
 }
+                                /*  DIALOG */
+#dialog{
+  display: block;
+  height: 600px;
+  width: 850px;
+  z-index: 200;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+#rightdialog{
+  float: right;
+  width: auto;
+  font-family: "FaktPro";
+  font-size: 30pt;
+  margin-top: 350px;
+  transition: 2s;
+  transition-delay: 5s;
+}
+#leftdialog{
+  float: left;
+  width: 300px;
+  font-family: "FaktPro";
+  font-size: 30pt;
+  margin-top: 150px;
+  transition: 2s;
+  transition-delay: 2500ms;;
+}
+#choicebuttons{
+margin-top: 500px;
+text-align: center;
+transition: 2s;
+transition-delay: 6s;
+}
+.yesnobtn{
+  margin: 5px;
+  font-family: "GTSectra";
+  font-size: 20pt;
+  padding: 5px;
+}
+#yesbtn{
+}
+#nobtn{
+}
+
                                 /*  CYB */
 #cyb-container{
   display: block;
-  height: 95vh;
-  width: 300px;
-  position: relative;
-  bottom: 0;
-  margin: auto;
-  transition: 4s;
+  transition: 2500ms;
 }
 .hidden{
   opacity: 0;
 }
 #cyb{
   display: block;
-  z-index: 20;
+  z-index: 1000;
   position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
   margin: auto;
+
+}
+#face{
+  cursor: pointer;
 }
 #shadow{
   display: block;
@@ -51,9 +94,8 @@ a {
   margin: auto;
 }
 #shadowpath{
-  fill: green;
+  fill: #6E6EB1;
 }
-
                                 /*  BUTTON */
 button {
   -webkit-appearance: none;
@@ -299,4 +341,8 @@ button {
 @font-face {
   font-family: 'GTSectra';
   src: url('../fonts/GT-Sectra-Book.otf');
+}
+@font-face {
+  font-family: 'FaktPro';
+  src: url('../fonts/FaktPro-Normal.otf');
 }

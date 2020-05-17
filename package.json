@@ -4,7 +4,7 @@
   "description": "CAPTCHA web app game",
   "main": "index.js",
   "scripts": {
-    "start": "parcel dist/index.html",
+    "start": "parcel index.html",
     "build": "parcel build index.html --no-cache",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

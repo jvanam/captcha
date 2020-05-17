@@ -1,12 +1,35 @@
 const cyb = require('/scripts/cyb.js');
 var emotiveState = "neutral";
-var face = document.querySelector("#face");
+var cybSvg = document.querySelector("#cyb");
+var facePath = document.querySelector("#face");
 var shadow = document.querySelector("#shadow");
-var cybCont = document.querySelector("#cyb-container");
+var dialogCont = document.querySelector("#dialog");
+
 // onload animations
+var cybCont = document.querySelector("#cyb-container");
+var dialogRight = document.querySelector("#rightdialog");
+var dialogLeft = document.querySelector("#leftdialog");
+var choiceBtn = document.querySelector("#choicebuttons");
 cyb.pulse();
 window.addEventListener("load", function(){
   cybCont.classList.remove("hidden");
+  dialogRight.classList.remove("hidden");
+  dialogLeft.classList.remove("hidden");
+  choiceBtn.classList.remove("hidden");
+});
+
+//toggle Cyb's motive state with yes/no choicebuttons
+var yesBtn = document.querySelector("#yesbtn");
+var noBtn = document.querySelector("#nobtn");
+yesBtn.addEventListener("click", function(){
+  console.log("yesbutton clicked~");
+  cyb.cybToPleased()
+  emotiveState = "pleased";
+});
+noBtn.addEventListener("click", function(){
+  console.log("yesbutton clicked~");
+  cyb.cybToUpset()
+  emotiveState = "upset";
 });
 
 //toggle Cyb's emotive states on click
