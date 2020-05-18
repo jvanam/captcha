@@ -123,8 +123,7 @@ var qImg = document.querySelectorAll(".q-img");
 var identifier = document.querySelector("#q-identifier");
 var qType1 = document.querySelector("#q-type1");
 var qType2 = document.querySelector("#q-type2");
-// var quizGroup =
-function populateSquares() {
+function populateSquares(){
   var qstLink;
   var question = "q" + lvl[qstInd].toString();
   if (lvl===lvl1qs){

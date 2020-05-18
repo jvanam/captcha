@@ -37,8 +37,8 @@ a {
   font-family: "FaktPro";
   font-size: 30pt;
   margin-top: 350px;
-  transition: 2s;
-  transition-delay: 5s;
+  transition: 1s;
+  transition-delay: 3s;
 }
 #leftdialog{
   float: left;
@@ -46,14 +46,14 @@ a {
   font-family: "FaktPro";
   font-size: 30pt;
   margin-top: 150px;
-  transition: 2s;
-  transition-delay: 2500ms;;
+  transition: 1s;
+  transition-delay: 2s;;
 }
 #choicebuttons{
 margin-top: 500px;
 text-align: center;
 transition: 2s;
-transition-delay: 6s;
+transition-delay: 3s;
 }
 .yesnobtn{
   margin: 5px;
@@ -83,7 +83,7 @@ display: none;
                                 /*  CYB */
 #cyb-container{
   display: block;
-  transition: 2500ms;
+  transition: 2s;
 }
 .hidden{
   opacity: 0;
