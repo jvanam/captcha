@@ -69,7 +69,17 @@ transition-delay: 6s;
   display: inline-block;
   cursor: pointer;
 }
+.nameinput{
+outline: none;
+border: none;
+width: inherit;
+height: inherit;
+border-radius: 50px;
+font-size: 20pt;
+margin-left: 10px;
+background-color: transparent;
 
+}
                                 /*  CYB */
 #cyb-container{
   display: block;

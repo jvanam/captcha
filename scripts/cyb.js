@@ -11,6 +11,17 @@ const pulse = () => {
   duration: 2000,
   });
 }
+
+//during dialog process
+const input = () => {
+  anime({
+  targets: '#yesbtn',
+  width: '400px',
+  easing: "linear",
+  duration: 1000,
+  });
+}
+
 // main emotive changes
 const cybToPleased = () => {
   mouthToPleased();
@@ -153,6 +164,7 @@ const shadowToPink = () => {
 
 //exports
 exports.pulse = pulse;
+exports.input = input;
 exports.cybToPleased = cybToPleased;
 exports.cybToNeutral = cybToNeutral;
 exports.cybToUpset = cybToUpset;

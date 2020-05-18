@@ -32,6 +32,8 @@ yesBtn.addEventListener("click", function(){
   noBtn.classList.add("hidden");
   dialogRight.classList.add("hidden");
   dialogLeft.classList.add("hidden");
+  yesBtn.innerHTML = "<input type=\"text\" placeholder=\"Name\" class=\"nameinput\"/>";
+  cyb.input();
 });
 noBtn.addEventListener("click", function(){
   console.log("yesbutton clicked~");
