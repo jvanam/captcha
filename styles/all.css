@@ -58,27 +58,27 @@ transition-delay: 6s;
 .yesnobtn{
   margin: 5px;
   font-family: "GTSectra";
-  font-size: 20pt;
+  font-size: 18pt;
   padding: 5px;
   border: solid;
   width: 100px;
   border-color: black;
   border-width: 1px;
   border-radius: 50px;
-  box-shadow: 0 1 4px 1px #a1a1a1;
   display: inline-block;
   cursor: pointer;
+  box-shadow: 0 1px 3px 1px rgba(60,64,67,0.15), 0 1px 2px 0 rgba(60,64,67,0.3);
 }
-.nameinput{
+#nameinput {
 outline: none;
 border: none;
 width: inherit;
 height: inherit;
-border-radius: 50px;
+border-radius: 5px;
 font-size: 20pt;
-margin-left: 10px;
+margin-left: 15px;
 background-color: transparent;
-
+display: none;
 }
                                 /*  CYB */
 #cyb-container{
@@ -125,7 +125,8 @@ button {
 #b-grid-container {
   display: none;
   position: absolute;
-  top: 0px;
+  /* top: 0px; */
+  top: 650px;
   left: -200px;
   right: 0px;
   bottom: 0px;
@@ -215,27 +216,27 @@ button {
   /* border-top: 11px solid transparent;
   border-right: 11px solid white;
   border-bottom: 11px solid transparent; */
-  top: 0px;
+  top: 650px;
   bottom: 0px;
   left: -420px;
   right: 0px;
   border-style: solid;
   border-width: 10px;
   border-color: transparent rgb(255, 255, 255) transparent transparent;
-  z-index: 20;
+  z-index: 400;
 }
 #outer{
   border-color: transparent rgb(204, 204, 204) transparent transparent;
   border-width: 11px;
   border-style: solid;
-  top: 0px;
+  top: 650px;
   bottom: 0px;
   left: -422px;
   right: 0px;
   /* border-top: 10px solid rgb(204,204,204);
   border-right: 10px solid white;
   border-bottom: 10px solid rgb(204,204,204); */
-  z-index: 20;
+  z-index: 400;
 }
 #q-grid-container{
   width: 400px;
@@ -243,18 +244,16 @@ button {
   border: 1px solid rgb(204, 204, 204);
   box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 3px;
   grid-template-rows: 127px auto auto 60px;
-  /* transition: visibility 0s linear 0s, opacity 0.3s linear 0s; */
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  top: 650px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
   margin: auto;
   z-index: 300;
   display: none;
   background-color: #fff;
   opacity: 1;
-  transition: opacity 1s;
 }
 #q-row1{
   background-color: #4a90e2;

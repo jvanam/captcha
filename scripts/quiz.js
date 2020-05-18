@@ -4,6 +4,7 @@ var cybSvg = document.querySelector("#cyb");
 var facePath = document.querySelector("#face");
 var shadow = document.querySelector("#shadow");
 var dialogCont = document.querySelector("#dialog");
+var state = "intro";
 
 // onload animations
 var cybCont = document.querySelector("#cyb-container");
@@ -22,23 +23,30 @@ window.addEventListener("load", function(){
 var yesBtn = document.querySelector("#yesbtn");
 var noBtn = document.querySelector("#nobtn");
 var bCont = document.querySelector("#b-grid-container");
+var nameInput = document.querySelector("#nameinput");
+var yesTxt = document.querySelector("#yestxt");
 yesBtn.addEventListener("click", function(){
   console.log("yesbutton clicked~");
   cyb.cybToPleased()
   emotiveState = "pleased";
   dialogLeft.style.transitionDelay="0s";
   dialogRight.style.transitionDelay="0s";
-  noBtn.style.transition="2s";
-  noBtn.classList.add("hidden");
+  noBtn.textContent="Submit";
   dialogRight.classList.add("hidden");
   dialogLeft.classList.add("hidden");
-  yesBtn.innerHTML = "<input type=\"text\" placeholder=\"Name\" class=\"nameinput\"/>";
+  yesTxt.style.display = "none";
+  nameInput.style.display = "block";
   cyb.input();
+  state="dialog";
 });
 noBtn.addEventListener("click", function(){
-  console.log("yesbutton clicked~");
-  cyb.cybToUpset()
-  emotiveState = "upset";
+  console.log("nobutton clicked~");
+  if(state==="intro"){
+    cyb.cybToUpset()
+    emotiveState = "upset";
+  } else if(state==="dialog"){
+    bCont.style.display="grid";
+  }
 });
 
 //toggle Cyb's emotive states on click
