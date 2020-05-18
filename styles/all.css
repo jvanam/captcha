@@ -1,14 +1,19 @@
-h1 {
-  font-family: "GTSectraITalic";
-  color: black;
-  font-size: 30pt;
-}
+
 #header {
   width: 100%;
   text-align: center;
-  border-width: thin;
+  margin-bottom: 0px;
   position: absolute;
   top: 0;
+  font-family: "GTSectraITalic";
+  color: black;
+  font-size: 24pt;
+  font-weight: 500;
+  border-bottom: solid;
+  border-color: #e0e0e0;
+  border-width: 0px 0px 1px 0px;
+  padding: 20px;
+  cursor: default;
 }
 p {
   margin: 0px;
@@ -55,10 +60,14 @@ transition-delay: 6s;
   font-family: "GTSectra";
   font-size: 20pt;
   padding: 5px;
-}
-#yesbtn{
-}
-#nobtn{
+  border: solid;
+  width: 100px;
+  border-color: black;
+  border-width: 1px;
+  border-radius: 50px;
+  box-shadow: 0 1 4px 1px #a1a1a1;
+  display: inline-block;
+  cursor: pointer;
 }
 
                                 /*  CYB */
@@ -71,7 +80,7 @@ transition-delay: 6s;
 }
 #cyb{
   display: block;
-  z-index: 1000;
+  z-index: 100;
   position: absolute;
   top: 0;
   left: 0;
@@ -120,7 +129,7 @@ button {
   border-radius: 3px;
   grid-template-rows: auto;
   grid-template-columns: 52px auto 75px;
-  z-index: 5;
+  z-index: 200;
 }
 #b-col1 {
   grid-column: 1;
@@ -231,7 +240,7 @@ button {
   left: 0;
   right: 0;
   margin: auto;
-  z-index: 10;
+  z-index: 300;
   display: none;
   background-color: #fff;
   opacity: 1;

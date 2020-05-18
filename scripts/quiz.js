@@ -21,10 +21,17 @@ window.addEventListener("load", function(){
 //toggle Cyb's motive state with yes/no choicebuttons
 var yesBtn = document.querySelector("#yesbtn");
 var noBtn = document.querySelector("#nobtn");
+var bCont = document.querySelector("#b-grid-container");
 yesBtn.addEventListener("click", function(){
   console.log("yesbutton clicked~");
   cyb.cybToPleased()
   emotiveState = "pleased";
+  dialogLeft.style.transitionDelay="0s";
+  dialogRight.style.transitionDelay="0s";
+  noBtn.style.transition="2s";
+  noBtn.classList.add("hidden");
+  dialogRight.classList.add("hidden");
+  dialogLeft.classList.add("hidden");
 });
 noBtn.addEventListener("click", function(){
   console.log("yesbutton clicked~");
