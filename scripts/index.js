@@ -26,7 +26,6 @@ var bCont = document.querySelector("#b-grid-container");
 var nameInput = document.querySelector("#nameinput");
 var yesTxt = document.querySelector("#yestxt");
 yesBtn.addEventListener("click", function(){
-  console.log("yesbutton clicked~");
   cyb.cybToPleased()
   emotiveState = "pleased";
   dialogLeft.style.transitionDelay="0s";
@@ -40,27 +39,11 @@ yesBtn.addEventListener("click", function(){
   state="dialog";
 });
 noBtn.addEventListener("click", function(){
-  console.log("nobutton clicked~");
   if(state==="intro"){
     cyb.cybToUpset()
     emotiveState = "upset";
   } else if(state==="dialog"){
     bCont.style.display="grid";
-  }
-});
-
-//toggle Cyb's emotive states on click
-face.addEventListener("click", function(){
-  console.log(emotiveState);
-  if (emotiveState==="pleased"){
-    cyb.cybToUpset()
-    emotiveState = "upset";
-  } else if (emotiveState==="upset") {
-    cyb.cybToNeutral()
-    emotiveState = "neutral";
-  }else if (emotiveState==="neutral") {
-    cyb.cybToPleased()
-    emotiveState = "pleased";
   }
 });
 
@@ -258,11 +241,26 @@ verBtn.addEventListener("click", function(){
     if(qstInd<lvl2length-1){
       qstInd += 1;
     } else if(qstInd===lvl2length-1){
-      window.open('results.html', '_self');
+      console.log("welcome to the results page");
+      state = "results";
+      results();
     }
   }
   populateSquares();
 })
+
+var resultstxt = document.querySelector("#results-block");
+function results(){
+  dialogCont.style.display = "none";
+  bCont.style.display="none";
+  quizFrame.style.display = "none";
+  qTri.forEach((el) => {
+    el.style.display = "none";
+  });
+  choiceBtn.style.display = "none";
+  resultstxt.style.display = "block";
+  cyb.results();
+}
 
 // DANGER ZONE! RESET ALL SCORES TO ZERO //
 function resetScores() {

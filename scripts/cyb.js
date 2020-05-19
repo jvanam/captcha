@@ -22,6 +22,18 @@ const input = () => {
   });
 }
 
+
+//upon results
+var cybgroup = document.querySelectorAll('.cybsvg');
+const results = () => {
+  anime({
+  targets: cybgroup,
+  translateX: -300,
+  easing: "cubicBezier(.5, .05, .1, .3)",
+  duration: 2000,
+  });
+}
+
 // main emotive changes
 const cybToPleased = () => {
   mouthToPleased();
@@ -165,6 +177,7 @@ const shadowToPink = () => {
 //exports
 exports.pulse = pulse;
 exports.input = input;
+exports.results = results;
 exports.cybToPleased = cybToPleased;
 exports.cybToNeutral = cybToNeutral;
 exports.cybToUpset = cybToUpset;
