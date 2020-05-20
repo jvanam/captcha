@@ -38,12 +38,17 @@ yesBtn.addEventListener("click", function(){
   cyb.input();
   state="dialog";
 });
+var body = document.querySelector("body");
 noBtn.addEventListener("click", function(){
   if(state==="intro"){
     cyb.cybToUpset()
     emotiveState = "upset";
+    dialogRight.textContent = "Ok. I can wait.";
+    dialogLeft.style.transitionDelay = "0s";
+    dialogLeft.style.opacity = "0";
   } else if(state==="dialog"){
     bCont.style.display="grid";
+    body.style.height = "1000px";
   }
 });
 
@@ -259,6 +264,7 @@ function results(){
   });
   choiceBtn.style.display = "none";
   resultstxt.style.display = "block";
+  body.style.height = "100vh";
   cyb.results();
 }
 
