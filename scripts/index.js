@@ -71,13 +71,13 @@ var initLvl2Img = firebase.database().ref("lvl2/img").once('value')
 
 // set total number of lvl1 and lvl2 questions to be chosen from
 var lvl1qtotal = [1,2,3,4,5,6,7,8];
-var lvl2qtotal = [1,2,3,4];
+var lvl2qtotal = [1,2,3,4,5,6,7,8];
 // create array of questions in this game
 var lvl1qs = [];
 var lvl2qs = [];
 //set length of each level
-var lvl1length = 5;
-var lvl2length = 4;
+var lvl1length = 4;
+var lvl2length = 5;
 
 // set the level and question vars
 function setLineup(){
