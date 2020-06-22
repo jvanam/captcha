@@ -1,6 +1,7 @@
 
 body{
   width: 100vw;
+  background-color: white;
 }
 #header {
   width: 100vw;
@@ -41,7 +42,7 @@ a {
   font-size: 30pt;
   margin-top: 350px;
   transition: 1s;
-  transition-delay: 3s;
+  transition-delay: 4s;
 }
 #leftdialog{
   float: left;
@@ -56,7 +57,7 @@ a {
 margin-top: 500px;
 text-align: center;
 transition: 2s;
-transition-delay: 3s;
+transition-delay: 4s;
 }
 .yesnobtn{
   margin: 5px;
@@ -65,12 +66,12 @@ transition-delay: 3s;
   padding: 5px;
   border: solid;
   width: 100px;
-  border-color: black;
+  border-color: #dfe1e5;
   border-width: 1px;
   border-radius: 50px;
   display: inline-block;
   cursor: pointer;
-  box-shadow: 0 1px 3px 1px rgba(60,64,67,0.15), 0 1px 2px 0 rgba(60,64,67,0.3);
+  box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
 }
 #nameinput {
 outline: none;
@@ -365,9 +366,6 @@ button {
   padding-left: 400px;
   font-family: "FaktPro";
   font-size: 24pt;
-}
-#results-txt{
-
 }
                                 /*  FONTS */
 @font-face {
