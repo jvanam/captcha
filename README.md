@@ -1,2 +1,2 @@
-# captcha
-CAPTCHA web app game
+# deCaptcha
+is a net-art site parodying Google's reCaptcha v2
